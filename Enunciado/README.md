@@ -13,4 +13,4 @@ Los objetivos generales son:
   3. Sistema programable -> Lo tenemos que hacer.
 ## 2.2 Componentes destacados del prototipo
   * Especificación
-    1. Se suministrará un documento de especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf). Se deberá aclarar y completar con el profesor.
+    - Se suministrará un documento de especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf). Se deberá aclarar y completar con el profesor.
