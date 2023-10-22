@@ -13,5 +13,10 @@ Los objetivos generales son:
   3. Sistema programable -> Lo tenemos que hacer.
 ## 2.2 Componentes destacados del prototipo
   * Especificación
-    - Se suministrará un documento de especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf). Se deberá aclarar y completar con el profesor.
-    - El presupuesto debe incluir las horas de ingeniero. El coste material en este proyecto es muy poco en comparación con las horas de trabajo
+    - Se suministrará un documento de especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf). Leer con mucho detalle. Se deberá aclarar y completar con el profesor.
+    - Previsión de esfuerzo.
+    - Coste asociado. El presupuesto debe incluir las horas de ingeniero. El coste material en este proyecto es muy poco en comparación con las horas de trabajo.
+  * Diseño
+    - Para el diseño hardware iremos muy acopmpañados, sobre todo en el laboratorio.
+    - Para el software se hará un diseño de alto nivel con SysML y un diseño detallado. El programador necesitará un diseño detallado que no le genere ninguna duda. Este diseño debe ser superdetallado. Recomendados los diagramas de estado de SysML para realizar diagramas detallados.
+    - Para las trazas se recomienda hacer tablas para cada una.
