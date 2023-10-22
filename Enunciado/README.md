@@ -20,3 +20,9 @@ Los objetivos generales son:
     - Para el diseño hardware iremos muy acopmpañados, sobre todo en el laboratorio.
     - Para el software se hará un diseño de alto nivel con SysML y un diseño detallado. El programador necesitará un diseño detallado que no le genere ninguna duda. Este diseño debe ser superdetallado. Recomendados los diagramas de estado de SysML para realizar diagramas detallados.
     - Para las trazas se recomienda hacer tablas para cada una.
+  * Pruebas
+    - Tener lista una batería de pruebas para cuando el Sistema Empotrado esté construido.
+    - Se recomienda el uso de pruebas de Caja Negra de tal manera que a partir de los interfaces/bloques podamos hacer pruebas.
+## 3. Entragas a realizar
+  1. Especificación y diseño.
+  2. Cosntrucción y pruebas. Interesa comentar todos los problemas que han surgido. Sobre todo cómo hemos activado la generación de soluciones frente a esos problemas.
