@@ -2,7 +2,7 @@
 Hay que leerse bien tanto el documento de Especificaciones como el documento de Requisitos. Si surgen dudas, se anotan.
 
 # Anotaciones Enunciado
-En esta sección se comentarán aspectos relevantes del enunciado.
+En esta sección se comentarán aspectos relevantes del [enunciado](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf)).
 ## 2. Objetivo
 Los objetivos generales son:
   1. Monitorizar 5 parámetros: C02, temperatura, humedad, luminosidad y ruido ambiente.
@@ -26,3 +26,8 @@ Los objetivos generales son:
 ## 3. Entragas a realizar
   1. Especificación y diseño.
   2. Cosntrucción y pruebas. Interesa comentar todos los problemas que han surgido. Sobre todo cómo hemos activado la generación de soluciones frente a esos problemas.
+
+# Anotaciones Requisitos
+En esta sección se comentarán aspectos relevantes y dudas de la especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf).
+## 2.2 Perspectiva del producto
+  Tenemos un componente (SMA) que es el que tenemos que hacer, este circuito irá conectado a otro (CA) que es el encargado de realizar las actividades de acondicionamiento para sensores y actuadores.
