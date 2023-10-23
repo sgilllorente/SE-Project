@@ -27,6 +27,7 @@ Los objetivos generales son:
   1. Especificación y diseño.
   2. Cosntrucción y pruebas. Interesa comentar todos los problemas que han surgido. Sobre todo cómo hemos activado la generación de soluciones frente a esos problemas.
 
+
 # Anotaciones Requisitos
 En esta sección se comentarán aspectos relevantes y dudas de la especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf).
 ## 2.2 Perspectiva del producto
