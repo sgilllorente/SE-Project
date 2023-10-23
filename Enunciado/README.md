@@ -31,3 +31,8 @@ Los objetivos generales son:
 En esta sección se comentarán aspectos relevantes y dudas de la especificación de [requisitos](https://github.com/sgilllorente/SE-Project/blob/main/Enunciado/requisitos-v-0-2.pdf).
 ## 2.2 Perspectiva del producto
   Tenemos un componente (SMA) que es el que tenemos que hacer, este circuito irá conectado a otro (CA) que es el encargado de realizar las actividades de acondicionamiento para sensores y actuadores.
+## 2.3.1 Interfaz de componente CA 
+  - I2C: lo más importante es la velocidad de funcionamiento estándar. En los requisitos nos piden que sea de 100 KHz.
+  - Bus SPI: Nos da Norberto una función que imita el funcionamiento del bus SPI.
+## 2.3.1 Interfaz computador personal
+La conexión será por UART, igual que hemos hecho en las prácticas.
