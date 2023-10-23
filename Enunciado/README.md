@@ -36,3 +36,7 @@ En esta sección se comentarán aspectos relevantes y dudas de la especificació
   - Bus SPI: Nos da Norberto una función que imita el funcionamiento del bus SPI.
 ## 2.3.1 Interfaz computador personal
 La conexión será por UART, igual que hemos hecho en las prácticas.
+## 3. Requisitos específicos 
+  - ENC-30: Se deberá escribir en la memoria eeprom para poder guardar el últimos estado de la lámpara. Luz blanca = códgios RGB todos iguales.
+  - AC-10: 3 char de 255 valores (Rojo, Verde, Azul).
+  - AC-29: El ventilador lo vamos a controlar con una señal PWM. 0% -> ciclo de trabajo del 0%; 100 -> ciclo de trabajo del 100%. Para valores itermedios hacemos una regla de 3.
