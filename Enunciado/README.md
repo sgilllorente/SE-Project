@@ -39,4 +39,4 @@ La conexión será por UART, igual que hemos hecho en las prácticas.
 ## 3. Requisitos específicos 
   - ENC-30: Se deberá escribir en la memoria eeprom para poder guardar el últimos estado de la lámpara. Luz blanca = códgios RGB todos iguales.
   - AC-10: 3 char de 255 valores (Rojo, Verde, Azul).
-  - AC-29: El ventilador lo vamos a controlar con una señal PWM. 0% -> ciclo de trabajo del 0%; 100 -> ciclo de trabajo del 100%. Para valores itermedios hacemos una regla de 3.
+  - AC-29: El ventilador lo vamos a controlar con una señal PWM. 0% -> ciclo de trabajo del 0%; 100 -> ciclo de trabajo del 100%. Para valores itermedios hacemos una regla de 3. Para quitar el ruido del motor del ventilador es poner una frecuencia de la señal PWM por encima de 20KHz (30 aprox)
