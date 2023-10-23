@@ -1,3 +1,7 @@
-La idea es que por cada día de esta semana,se ponga en qué se ha trabajado y se suba al repositorio.
+# Lunes 30/10/23
+## Trabajo realizado
+## Dudas
 
-# Lunes
+# Jueves 2/11/23
+## Trabajo realizado
+## Dudas
