@@ -11,3 +11,4 @@ De 17 a 19 Hemos estado terminando el diseño lógico en KiCad. Hemos incluido l
 ![Circuito lógico](https://github.com/sgilllorente/SE-Project/assets/100001940/3204f4d5-8d4e-4afa-bf66-ac54b5a77ac3)
 
 ## Dudas
+- Todas las tierras tienen que converger en 1 sola?
