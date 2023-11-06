@@ -10,4 +10,7 @@ Para descargar Papyrus accedemos a https://eclipse.dev/papyrus/download.html
 
 # Jueves 2/11/23
 ## Trabajo realizado
+En el laboratorio, Stan dedicó una media hora a explicar el funcionamiento del programa de diseño lógico KiKad.
+
+En esta clase se diseñó el circuito de alimentación para el microcontrolado y el circuito del cristal de 20MHz.
 ## Dudas
