@@ -8,7 +8,7 @@ De 17 a 19 Hemos estado terminando el diseño lógico en KiCad. Hemos incluido l
  - Conector para el UART (3 pines).
  - Conector para los diferentes sensores (8 pines).
 
-![Circuito lógico](https://github.com/sgilllorente/SE-Project/assets/100001940/3204f4d5-8d4e-4afa-bf66-ac54b5a77ac3)
+![diagrama](https://github.com/sgilllorente/SE-Project/assets/100001940/10efe883-590b-48da-965f-be2d41c9697b)
 
 ## Dudas
 - Todas las tierras tienen que converger en 1 sola?
