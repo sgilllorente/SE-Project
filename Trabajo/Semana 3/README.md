@@ -12,3 +12,4 @@ De 17 a 19 Hemos estado terminando el diseño lógico en KiCad. Hemos incluido l
 
 ## Dudas
 - Todas las tierras tienen que converger en 1 sola?
+   - No, en el diseño lógico no. En el físico obviamente sí, todo se conecta a la misma tierra, pero en el lógico para no "ensuciar" el diagrama, se ponen varias tierras
