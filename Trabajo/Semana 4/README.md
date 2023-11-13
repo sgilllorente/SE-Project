@@ -15,4 +15,10 @@ Por la mañana nos hemos dado cuenta de que teníamos mal el diseño lógico
 
 Importante quitar el pin8 que va al analógico.
 
+Para tocar en KiCad:
+- Herramientas > anotar esquema
+- Herramientas > asignar huellas
+- Tenemos que tener la misma huella quela foto de Jonai
+Asegurarnos que loscomponentes tengan la misma huella
+
 
