@@ -20,5 +20,6 @@ Para tocar en KiCad:
 - Herramientas > asignar huellas
 - Tenemos que tener la misma huella quela foto de Jonai
 Asegurarnos que loscomponentes tengan la misma huella
+- Cuando terminemos la asignación de huellas de nuestros componentes, le mandamos captura a Stan. stanislav.vakaruk@upm.es
 
 
