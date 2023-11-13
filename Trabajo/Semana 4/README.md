@@ -13,4 +13,6 @@ Por la mañana nos hemos dado cuenta de que teníamos mal el diseño lógico
 7. Digital (out)
 8. Digital (out)
 
+Importante quitar el pin8 que va al analógico.
+
 
