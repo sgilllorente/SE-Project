@@ -21,5 +21,12 @@ Para tocar en KiCad:
 - Tenemos que tener la misma huella quela foto de Jonai
 Asegurarnos que loscomponentes tengan la misma huella
 - Cuando terminemos la asignación de huellas de nuestros componentes, le mandamos captura a Stan. stanislav.vakaruk@upm.es
-
+  Pulsamos aplicar guardar y continuar.
+-Abrimos el esquema físico(deberia de estar vacio) Si no esta la creas tonto.
+Aplicar la placa
+-Alimentacion, dejarla en un lateral.
+-PIckit lejos del Pic
+.Oscilador, lo mas cerca del Pic posinle.
+-lineas no entre dos ppines.-
+Cara trasera, el nombre del grupo. 
 
