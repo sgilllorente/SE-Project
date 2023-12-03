@@ -27,6 +27,8 @@ void mostrar_sensores();
 void interfaz_usuario();
 void modificar_sensores(int *led_R, int *led_G, int *led_B, int *luminosidad, int *velocidad_ventilador);
 
+
+//*****Funciones necesarias*****
 void init_uart(void)
 {  
   TXSTAbits.BRGH = 0;
@@ -49,27 +51,45 @@ void init_uart(void)
   TXSTAbits.TXEN = 1; /* Enable transmitter */
   
  }
-
- void init_timer0()
+void init_timer0()
 {
     OPTION_REGbits.T0CS = 0; // Por que usamos el reloj interno del TMR0
     OPTION_REGbits.PSA = 0; // PSA a 0 para que nos acepte el preescalado.
     OPTION_REGbits.PS = 0b111; // ratio 1:256
     TMR0 = 237; //256-19.53  (5*10^6/ 256)*0.001 -> 0,001 porque quiero que el retardo sea de 1 ms, así va contando cada 1 ms los ticks
 }
-
-void __interrupt() interruptHandler(void)
+void init_adc(void) //DUDA IMPORTANTE: si solo tenemos un adc y solo te puede llegar por un canal, como hacemos para leer a la vez varios sensores??
 {
-    TMR0 = 159;
-    ticks++;// esta variable va a ir aumentando infinitamente, no se resetea en ningún momento
+    ADCON0bits.ADCS = 0b10; //para establecer el periodo de carga del adc que nos piden (1,6 us)
+    ADCON0bits.ADON = 1; //habilita el ADC
+    ADCON0bits.CHS = 0b0000; // seleccionamos el canal 0/ pin 0 del adc
+
+
+    ADCON1bits.ADFM = 1; //de los dos registros, los dos valores menores de la izquierda sean los dos mayores de la derecha
+    ADCON1bits.VCFG1 = 0; //para dar tierra al adc
+    ADCON1bits.VCFG0 = 0; //para dar tensión al adc
+
+    TRISAbits.TRISA0 = 1; //para configurar el trisa0 como lectura
+
+}
+/* It is needed for printf */
+void putch(char data)
+{
+    while(!TXIF) //chekea si el bufffer esta ocupado
+        continue;
+    TXREG=data;
+ }
+
+void interrupt_ruido()
+{
     contador_ruido++; //me he declarado un contador ruido para que cuando llegue a 10 pueda tratar el ruido y poder posteriormente ponerlo a 0
-    contador_sensores++; //me he declarado un contador ruido para que cuando llegue a 5000 pueda tratar los senosres y poder posteriormente ponerlo a 0
 
     /*ruido=medi_ruido();
     ruido_anterior = ruido;*/
     if(contador_ruido==10)
+    {
         contador_ruido_aux++;
-        ruido = medir_ruido();
+        ruido = medir_ruido();//no está
         if(ruido<ruido_anterior)
             ruido = ruido_anterior;
         if(contador_ruido_aux==10)
@@ -81,21 +101,36 @@ void __interrupt() interruptHandler(void)
             else 
                 printf("Ruido alto: %d", ruido);
             
-            enviar_usart(ruido);
+            enviar_usart(ruido);//no está
 
         }
         contador_ruido = 0;
+    }
+}
+
+void __interrupt() interruptHandler(void)
+{
+    TMR0 = 237;
+    //ticks++;// esta variable va a ir aumentando infinitamente, no se resetea en ningún momento
+    
+    contador_sensores++; //me he declarado un contador ruido para que cuando llegue a 5000 pueda tratar los senosres y poder posteriormente ponerlo a 0
+
+    interrupt_ruido();
+    
     if(contador_sensores=5000)
     {
-        int adc = conversion_adc();
+        int adc = conversion_adc();//no está
         //aquí hay que ver qué señal ha convertido el adc, si co2, humedad, temperatura o luminosidad
 
-        //enviar_usart(señal de adc tratada);
+        enviar_usart(adc); //no está
         
     }
         
     INTCONbits.T0IF = 0;
 }
+
+
+//*****Funciones del usuario*****
 int cambiar_sensores_pantalla()
 {
     int respuesta;
@@ -113,9 +148,9 @@ void mostrar_sensores()
     printf("\n");
     printf("- Huemdad realtiva: %d", humedad);
     printf("\n");
-    printf("- Temperatura: %d", ruido);
+    printf("- Temperatura: %d", temperatura);
     printf("\n");
-    printf("- Luminosidad: %d", ruido);
+    printf("- Luminosidad: %d", luminosidad);
     printf("\n\n");
     
 }
