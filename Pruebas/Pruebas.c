@@ -73,12 +73,12 @@ void init_adc(void) //DUDA IMPORTANTE: si solo tenemos un adc y solo te puede ll
 
 }
 /* It is needed for printf */
-void putch(char data)
+void enviar_usart(char data)
 {
     while(!TXIF) //chekea si el bufffer esta ocupado
         continue;
     TXREG=data;
- }
+}
 
 void interrupt_ruido()
 {
@@ -155,23 +155,79 @@ void mostrar_sensores()
     
 }
 
-void modificar_sensores(int *led_R, int *led_G, int *led_B, int *luminosidad, int *velocidad_ventilador)
+void modificar_sensores() 
 {
-    printf("Introduzca el nuevo valor del color R del Led (color actual = %d): ", *led_R);
-    scanf("%d", led_R);
+    printf("Introduzca el nuevo valor del color R del Led (color actual = %d): ");
+    scanf("%d", valor_a_modificar); 
+    enviar_usart(valor_a_modificar); //32d-47d // 100000 - 101111 // 20h - 2Fh
     printf("\n");
     printf("Introduzca el nuevo valor del color G del Led (color actual = %d): ", *led_G);
-    scanf("%d", led_G);
+    scanf("%d", valor_a_modificar);
+    enviar_usart(valor_a_modificar); //48d-63d // 110000 - 111110 // 30h - 3Fh 
     printf("\n");
     printf("Introduzca el nuevo valor del color B del Led (color actual = %d): ", *led_B);
-    scanf("%d", led_B);
+    scanf("%d", valor_a_modificar);
+    enviar_usart(valor_a_modificar); //64d-79d // 111111 - 1001111 // 40h - 4Fh
     printf("\n");
     printf("Introduzca el nuevo valor de luminosidad (valor actual = %d): ", *luminosidad);
-    scanf("%d", luminosidad);
+    scanf("%d", valor_a_modificar);
+    enviar_usart(valor_a_modificar); //80d-95d // 1010000 - 1011111 // 50h - 5Fh
     printf("\n");
     printf("Introduzca el nuevo valor de velocidad del ventilador (valor actual = %d): ", *velocidad_ventilador);
-    scanf("%d", velocidad_ventilador);
+    scanf("%d", valor_a_modificar);
+    enviar_usart(valor_a_modificar); //96d-111d // 1100000 - 1101111 // 60h - 6Fh
     printf("\n\n");
+}
+
+/*código de chatgpt para acceder a GPR
+#include <xc.h>
+
+// Definir el registro de propósito general en el banco 0 (por ejemplo, GPR0)
+volatile unsigned char GPR0 @ 0x20;
+
+void main(void) {
+    // Seleccionar el banco 0
+    INTCONbits.GIE = 0;   // Deshabilitar interrupciones antes de cambiar de banco
+    INTCONbits.PEIE = 0;  // Deshabilitar interrupciones periféricas antes de cambiar de banco
+    STATUSbits.RP0 = 0;   // Seleccionar el banco 0
+
+    // Acceder al registro de propósito general en el banco 0 (por ejemplo, GPR0)
+    GPR0 = 0x55;  // Asignar un valor al registro GPR0
+
+    // Aquí puedes realizar operaciones con GPR0 si es necesario
+
+    // Deseleccionar el banco 0 (opcional, dependiendo de tus necesidades)
+    STATUSbits.RP0 = 1;  // Volver al banco original
+
+    // Habilitar interrupciones nuevamente si es necesario
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+    while (1) {
+        // Tu código principal aquí
+    }
+
+    return 0;
+}
+*/
+
+
+void recibir_usart(int *datos)
+{
+    
+    while(!TXIF) //chekea si el bufffer esta ocupado
+        continue;
+    *datos = TXREG;
+}
+
+
+void enviar_usart(int *datos)
+{
+    
+    while(!TXIF) //chekea si el bufffer esta ocupado
+        continue;
+    TXREG = *datos ;
+    registrox = TXREG; 
 }
 
 //**********LAMP************
